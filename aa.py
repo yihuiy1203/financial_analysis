@@ -10,10 +10,6 @@ from faster_whisper import WhisperModel
 import requests
 
 # === 新增 ===
-from openai import OpenAI
-openai_api_key = "EMPTY"  # 若你的 FastAPI 服务无需密钥，可写任意值
-openai_api_base = "http://10.30.129.22:8000/v1"
-client = OpenAI(api_key=openai_api_key, base_url=openai_api_base)
 # =============
 
 # ========= 可调参数 =========
@@ -117,7 +113,7 @@ def transcribe_worker(model: WhisperModel, audio_float32: np.ndarray, seg_id: in
         sys.stdout.flush()
 
         # === 新增：转录后调用 LLM ===
-        threading.Thread(target=send_to_llm, args=(line,), daemon=True).start()
+        # threading.Thread(target=send_to_llm, args=(line,), daemon=True).start()
         # ===========================
 
 def main():
