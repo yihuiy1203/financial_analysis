@@ -1,0 +1,18 @@
+conda create -n vvv python=3.12.7
+conda activate vvv
+
+git clone https://github.com/index-tts/index-tts.git
+cd index-tts
+pip install -U uv
+
+#win11
+uv sync --extra webui：安装WebUI支持（推荐）。
+
+pip install "huggingface-hub[cli,hf_xet]"
+
+#Windows Powershell
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+hf download IndexTeam/IndexTTS-2 --local-dir=checkpoints
+
+uv run tools/gpu_check.py
+uv run webui.py
