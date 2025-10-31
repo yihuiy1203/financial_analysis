@@ -1,0 +1,8 @@
+#第一步：连到学校网络，建立虚拟环境
+conda create -n yolo python=3.12.7
+
+#第二步：激活虚拟环境
+conda activate yolo
+
+#安装yolo
+pip install ultralytics
