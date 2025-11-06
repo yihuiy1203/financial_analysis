@@ -10,6 +10,7 @@ conda create -n dsr python=3.12.7
 python -m ipykernel install --user --name dsr --display-name "Python (dsr)"
 
 5、进入虚拟环境，制作安装requirement.txt
+torch==2.6.0
 transformers==4.46.3
 tokenizers==0.20.3
 PyMuPDF
@@ -19,6 +20,8 @@ easydict
 addict 
 Pillow
 numpy
+
+pip install flash-attn==2.7.3 --no-build-isolation
 
 6、安装pytorch
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
