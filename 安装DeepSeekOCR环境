@@ -7,6 +7,7 @@ modelscope download --model deepseek-ai/DeepSeek-OCR  --local_dir ./DeepSeek-OCR
 conda create -n dsr python=3.12.7
 
 4、嵌入到jupyter notebook环境中
+pip install ipykernel
 python -m ipykernel install --user --name dsr --display-name "Python (dsr)"
 
 5、进入虚拟环境，制作安装requirement.txt
