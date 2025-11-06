@@ -1,9 +1,9 @@
 1、新建模型权重文件夹DeepSeek-OCR
 
-2、从modelscope上下载该模型到上述文件夹
+2、从modelscope上下载该模型到上述文件夹内
 modelscope download --model deepseek-ai/DeepSeek-OCR  --local_dir ./DeepSeek-OCR
 
-3、创建虚拟环境dsr
+3、在Anaconda promote里面创建虚拟环境dsr
 conda create -n dsr python=3.12.7
 
 4、嵌入到jupyter notebook环境中
@@ -11,7 +11,6 @@ pip install ipykernel
 python -m ipykernel install --user --name dsr --display-name "Python (dsr)"
 
 5、进入虚拟环境，制作安装requirement.txt
-torch==2.6.0
 transformers==4.46.3
 tokenizers==0.20.3
 PyMuPDF
@@ -22,8 +21,11 @@ addict
 Pillow
 numpy
 
-pip install flash-attn==2.7.3 --no-build-isolation
-
-6、安装pytorch
+6、安装torch
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+
+7、注意
+不需要安装flash_attn
+
+8、打开jupyter notebook
 
