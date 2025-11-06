@@ -1,0 +1,25 @@
+1、新建模型权重文件夹DeepSeek-OCR
+
+2、从modelscope上下载该模型到上述文件夹
+modelscope download --model deepseek-ai/DeepSeek-OCR  --local_dir ./DeepSeek-OCR
+
+3、创建虚拟环境dsr
+conda create -n dsr python=3.12.7
+
+4、嵌入到jupyter notebook环境中
+python -m ipykernel install --user --name dsr --display-name "Python (dsr)"
+
+5、进入虚拟环境，制作安装requirement.txt
+transformers==4.46.3
+tokenizers==0.20.3
+PyMuPDF
+img2pdf
+einops
+easydict
+addict 
+Pillow
+numpy
+
+6、安装pytorch
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+
